@@ -3,5 +3,11 @@
 import sys
 
 number = input('수를 입력하세요: ')
+if number.isdigit() is False:
+    print('정수를 입력하세요.')
+    sys.exit(0)
 
-sys.exit(0)
+if int(number) & 0x0001 == 0:
+    print('짝수')
+else:
+    print('홀수')

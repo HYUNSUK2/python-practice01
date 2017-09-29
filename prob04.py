@@ -11,5 +11,16 @@ s = """
     </body>
 </html>"""
 
+idxbegin = 0
+
+while True:
+    idxbegin = s.find('<', idxbegin)
+    if idxbegin == -1:
+        break
+    idxend = s.find('>')
+    if idxend != -1:
+        s = s[:idxbegin] + s[idxend+1:]
+    else:
+        idxend += 1
 
 print(s)
